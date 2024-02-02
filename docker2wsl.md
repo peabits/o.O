@@ -16,6 +16,26 @@ wsl -s $DISTRO_NAME
 wsl --unregister $DISTRO_NAME
 ```
 
+## Debian 12
+
+```bash
+cd "C:\Devel"
+
+docker pull debian:12
+
+docker run -itd --name debian12 debian:12
+
+docker export > debian12.tar debian12
+
+wsl --import debian12 "C:\Devel\debian12" debian12.tar
+
+wsl -d debian12
+
+wsl -s debian12
+
+wsl --unregister debian12
+```
+
 ## Ubuntu 22.04
 
 ```bash
@@ -34,6 +54,26 @@ wsl -d ubuntu2204
 wsl -s ubuntu2204
 
 wsl --unregister ubuntu2204
+```
+
+## Fedora 39
+
+```bash
+cd "C:\Devel"
+
+docker pull fedora:39
+
+docker run -itd --name fedora39 fedora:39
+
+docker export > fedora39.tar fedora39
+
+wsl --import fedora39 "C:\Devel\fedora39" fedora39.tar
+
+wsl -d fedora39
+
+wsl -s fedora39
+
+wsl --unregister fedora39
 ```
 
 ## Centos 7
@@ -74,6 +114,46 @@ wsl -d centos8
 wsl -s centos8
 
 wsl --unregister centos8
+```
+
+## RedHat UBI 8
+
+```bash
+cd "C:\Devel"
+
+docker pull redhat/ubi8
+
+docker run -itd --name redhat8 redhat/ubi8
+
+docker export > redhat8.tar redhat8
+
+wsl --import redhat8 "C:\Devel\redhat8" redhat8.tar
+
+wsl -d redhat8
+
+wsl -s redhat8
+
+wsl --unregister redhat8
+```
+
+## RedHat UBI 9
+
+```bash
+cd "C:\Devel"
+
+docker pull redhat/ubi9
+
+docker run -itd --name redhat9 redhat/ubi9
+
+docker export > redhat9.tar redhat9
+
+wsl --import redhat9 "C:\Devel\redhat9" redhat9.tar
+
+wsl -d redhat9
+
+wsl -s redhat9
+
+wsl --unregister redhat9
 ```
 
 ## RockyLinux 8
